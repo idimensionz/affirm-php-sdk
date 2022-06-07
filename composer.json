@@ -1,18 +1,18 @@
 {
-    "name": "saatchiart/affirm-php-sdk",
-    "description": "Unofficial Affirm php sdk",
-    "version": "1.0.1",
+    "name": "idimensionz/affirm-php-sdk",
+    "description": "Unofficial PHP SDK for Affirm Transaction API",
+    "version": "1.0.0",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Mike Funk",
-            "email": "mike.funk@saatchiart.com"
+            "name": "Jim Mullen",
+            "email": "info@idimensionz.com"
         }
     ],
     "autoload": {
       "psr-4": {
-          "SaatchiArt\\": "src/SaatchiArt/"
+          "iDimensionz\\": "src/iDimensionz/"
       }
     },
     "require-dev": {
@@ -23,7 +23,8 @@
         "phing/phing": "^2.16"
     },
     "require": {
-      "guzzlehttp/guzzle": "^6.3",
-      "leocavalcante/shape": "dev-master"
+        "guzzlehttp/guzzle": "^6.3",
+        "leocavalcante/shape": "dev-master",
+        "ext-json": "*"
     }
 }

@@ -1,11 +1,11 @@
 # Unofficial Affirm PHP SDK
 
-[Affirm API Docs](https://docs.affirm.com/Integrate_Affirm/Direct_API#checkout_object)
+[Affirm Transaction API Docs](https://docs.affirm.com/developers/reference/transaction-api-endpoints)
 
 
 ## Install:
 ```sh
-composer require saatchiart/affirm-php-sdk
+composer require idimensionz/affirm-php-sdk
 ```
 
 ## Usage:
@@ -16,26 +16,24 @@ $config = [
     'private_api_key' => 'MY_AFFIRM_PRIVATE_API_KEY',
     'is_sandbox' => true,
 ];
-$affirm = new \SaatchiArt\Affirm\Api\Client($config);
+$affirm = new \iDimensionz\Affirm\Api\Client($config);
 
-// authorize an affirm payment by checkout token
+// Authorize an Affirm payment by checkout token
 /** @var \stdClass $response decoded json from response */
 $optionalData = ['order_id' => 'OPTIONAL_ORDER_ID'];
 $response = $affirm->authorize('MY_CHECKOUT_TOKEN', $optionalData);
 
-// capture an authorized affirm payment by charge id
+// capture an authorized affirm payment by transaction id
 $optionalData = [
     'order_id' => 'abc123',
     'shipping_carrier' => 'my carrier',
     'shipping_confirmation' => 'abc123',
 ];
-$response = $affirm->capture('MY_CHARGE_ID', $optionalData);
+$response = $affirm->capture('MY_TRANSACTION_ID', $optionalData);
 
-// read an authorized charge by charge id
+// read the details of an authorized transaction by transaction id
 $optionalData = [
-    'limit' => 123,
-    'before' => 'beforeString',
-    'after' => 'afterString',
+    'expand' => 'checkout,events',
 ];
-$response = $affirm->read('MY_CHARGE_ID', $optionalData);
+$response = $affirm->read('MY_TRANSACTION_ID', $optionalData);
 ```

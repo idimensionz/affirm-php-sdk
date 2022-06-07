@@ -1,12 +1,7 @@
 <?php
-/**
- * ClientTest
- *
- * @copyright 2017 Leaf Group, Ltd. All Rights Reserved.
- */
 declare(strict_types=1);
 
-namespace SaatchiArt\Affirm\Api;
+namespace iDimensionz\Affirm\Api;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\BadResponseException;
@@ -19,8 +14,6 @@ use Psr\Http\Message\ResponseInterface;
  * Unit Tests.
  *
  * @see \Affirm\Api\Client
- *
- * @author Michael Funk <mike.funk@leafgroup.com>
  */
 class ClientTest extends TestCase
 {
