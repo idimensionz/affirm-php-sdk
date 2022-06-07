@@ -1,7 +1,7 @@
 # Unofficial Affirm PHP SDK
 
 [Affirm Transaction API Docs](https://docs.affirm.com/developers/reference/transaction-api-endpoints)
-
+[Affirm Charge API Docs](https://docs.affirm.com/developers/reference/the-charge-object)
 
 ## Install:
 ```sh
@@ -9,14 +9,15 @@ composer require idimensionz/affirm-php-sdk
 ```
 
 ## Usage:
+
 ```php
-// get an affirm php sdk instance
+// get an Affirm PHP Transaction API client sdk instance
 $config = [
     'public_api_key' => 'MY_AFFIRM_PUBLIC_API_KEY',
     'private_api_key' => 'MY_AFFIRM_PRIVATE_API_KEY',
     'is_sandbox' => true,
 ];
-$affirm = new \iDimensionz\Affirm\Api\Client($config);
+$affirm = new \iDimensionz\Affirm\Api\TransactionApiClient($config);
 
 // Authorize an Affirm payment by checkout token
 /** @var \stdClass $response decoded json from response */
@@ -37,3 +38,4 @@ $optionalData = [
 ];
 $response = $affirm->read('MY_TRANSACTION_ID', $optionalData);
 ```
+Using the Charge API client is similar to the Transaction API Client.

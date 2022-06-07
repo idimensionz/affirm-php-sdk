@@ -1,4 +1,8 @@
 parameters:
-  excludes_analyse:
+  level: 5
+  paths:
+    - src
     - tests
+  excludes_analyse:
     - vendor
+

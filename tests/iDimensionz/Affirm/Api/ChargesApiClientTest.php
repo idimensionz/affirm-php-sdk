@@ -13,9 +13,9 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * Unit Tests.
  *
- * @see \Affirm\Api\Client
+ * @see ChargesApiClient
  */
-class ClientTest extends TestCase
+class ChargesApiClientTest extends TestCase
 {
 
     /**
@@ -27,10 +27,10 @@ class ClientTest extends TestCase
         'is_sandbox' => false,
     ];
 
-    /** @var \Affirm\Api\Client class under test */
+    /** @var ChargesApiClient class under test */
     protected $client;
 
-    /** @var \GuzzleHttp\ClientInterface */
+    /** @var ClientInterface */
     protected $httpClient;
 
     /**
@@ -40,7 +40,7 @@ class ClientTest extends TestCase
     {
         $this->httpClient = $this->prophesize(ClientInterface::class);
         // instantiate class under test
-        $this->client = new Client(self::CONFIG, $this->httpClient->reveal());
+        $this->client = new ChargesApiClient(self::CONFIG, $this->httpClient->reveal());
     }
 
     /**
