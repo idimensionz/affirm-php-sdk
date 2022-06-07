@@ -1,7 +1,6 @@
 {
     "name": "idimensionz/affirm-php-sdk",
     "description": "Unofficial PHP SDK for Affirm Transaction API",
-    "version": "1.0.0",
     "type": "library",
     "license": "MIT",
     "authors": [
